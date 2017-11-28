@@ -1,4 +1,6 @@
 ## QUESTION 1
+url = pokemon[0][:abilities][0][:ability][:url]
+heavies = pokemon.any? {|poke| poke[:weight] > 60}
 
 pokemon = [
   {
@@ -62,8 +64,14 @@ pokemon = [
 
 
 # How would you get the url for Bulbasaur's ability?
+url = pokemon.find {|poke| poke[:name] ==
+"bulbasaur"}[:abilities][0][:ability][:url]
 # How would you return the first pokemon with base experience over 40?
+wise = pokemon.find {|poke| poke[:base_experience] > 40}
 # How would you return ALL OF THE pokemon with base experience over 40? (Gotta catch em all)
+wise_guys = pokemon.select {|poke| poke[:base_experience] > 40}
 # How would you return an array of all of the pokemon's names?
+names = pokemon.map {|poke| poke[:name]}
 # How would you determine whether or not the pokemon array contained any pokemon with a weight greater than 60?
 #  whatever method you use should return true if there are any such pokemon, false if not.
+heavies = pokemon.any? {|poke| poke[:weight] > 60}
